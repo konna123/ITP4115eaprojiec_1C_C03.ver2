@@ -1,0 +1,74 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>{{param1}}</h1>
+    
+<button class="like-button">Like</button>
+<span id="like-count">0</span>
+<script>
+    const likeButton = document.querySelector('#like-button');
+    const likeCount = document.querySelector('#like-count');
+  let count = 0;
+
+  likeButton.addEventListener('click', () => {
+    count++;
+    likeCount.textContent = count.toString();
+  });
+</script>
+
+    <p></p>
+    
+    <span class="timestamp"></span>
+        <script>
+
+  const timestamp = document.querySelector('.timestamp');
+
+  function updateTime() {
+    
+    const now = new Date();
+
+    
+    const timeString = now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+   
+    timestamp.textContent = timeString;
+  }
+
+ updateTime();
+  setInterval(updateTime, 1000);
+  
+  
+</script>
+
+</script>
+
+</p> <img src="{{ url_for('static', filename='img/250423__1024.jpg') }}" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 1000px; height: 300px;">
+<a>美國《華盛頓郵報》引述流傳洩漏機密文件，指華府力阻烏克蘭，在俄烏戰爭爆發一周年時，大舉攻擊俄羅斯首都莫斯科。事件被指揭露美烏之間衝突，美方致力避免戰事升級，烏方則希望延伸戰場至俄國領土。</a>
+<center><h1><a>【俄烏戰爭】俄徵「真男人」入伍 收入為俄平均月薪四倍起跳 <a class="btn btn-link" href="/newspageview/test6_news/" role="button"><span style="white-space: nowrap;">{{_("【下一頁】")}} &raquo;</a></a></h1> </center>
+           
+<p>流出的美國國家安全局（NSA）機密文件聲稱，烏軍國防部情報總局（HUR）局長布達諾夫（Kyrylo Budanov）下令，情報總局準備在2月24日，俄烏戰爭爆發一周年時全力向莫斯科發動大規模襲擊。
+
+
+
+據悉，烏軍同時打算攻擊俄國黑海城市港口新羅西斯克（Novorossiysk），向俄國展示烏軍有能力深入敵方領土作戰。
+
+2月22日即戰爭周年前兩年，美國中央情報局（CIA）最新情報指HUR應美方要求，同意延後攻擊莫斯科，但流傳文件未有詳細解釋原因。</p>
+                
+
+{% endblock %}

@@ -1,0 +1,78 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>{{param1}}</h1>
+    
+<button class="like-button">Like</button>
+<span id="like-count">0</span>
+<script>
+    const likeButton = document.querySelector('#like-button');
+    const likeCount = document.querySelector('#like-count');
+  let count = 0;
+
+  likeButton.addEventListener('click', () => {
+    count++;
+    likeCount.textContent = count.toString();
+  });
+</script>
+
+    <p></p>
+    
+    <span class="timestamp"></span>
+        <script>
+
+  const timestamp = document.querySelector('.timestamp');
+
+  function updateTime() {
+    
+    const now = new Date();
+
+    
+    const timeString = now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+   
+    timestamp.textContent = timeString;
+  }
+
+ updateTime();
+  setInterval(updateTime, 1000);
+</script>
+
+        <p></p>
+        <p>港股半日續跌逾百點，跌穿20000點。恒指輕微低開25點，早段曾轉升，其後再度向下，恒生指數半日跌125點，報19949點，跌穿20000點，成交493億元。科指升0.2%，報3978點。騰訊 （00700） 、阿里巴巴 （09988） 跌逾1%。商湯 （00020） 反彈4%，中芯國際 （00981）
+        升0.2%。新冠概念、網上醫療股逆市升，汽車股個別走，比亞迪 （01211） 升逾3%。）<p>
+        <h1><p>即市走勢︰</p></h1>
+        <p>【14：18】大市跌幅擴大至300點，報19765點，跌310點，下試250天綫（現約19735點）支持，科指跌1.5%，報3910點。
+
+【14：09】部分電力股逆市靠穩，潤電 （00836） 升0.8%，龍源電力 （00916） 升0.1%，中國電力 （02380） 跌0.3%。
+
+【13：51】騰訊 （00700） 曾跌逾3%，低見338元，恒指最新跌約255點，報19825點，科指跌1%，報3928點。
+
+【13：08】金沙 （01928） 跌逾3%，銀娛 （00027） 跌近3%。另外，永利 （01128） 、美高梅 （02282） 、澳博 （00880） 跌逾1%，新濠 （00200） 跌2%。
+
+【13：03】大市跌幅擴大至近200點，報19882點，跌193點。
+
+【13：01】騰訊 （00700） 午後初段跌2%，阿里巴巴 （09988） 跌逾1%，美團 （03690） 跌0.2%。
+
+【13：00】恒指午後初段跌約133點，報19942點，科指升0.1%，報3973點。
+
+【12：34】【航運股】海豐國際首季收入減少約41%　歸因集裝箱運量及平均運費下降</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <h1>{{ param1 }}</h1>
+        <p><a class="btn btn-link" href="/newspageview/test7_news/" role="button"><span style="white-space: nowrap;">{{_("【新股IPO】綠竹生物2480怡俊集團2442首日孖展　均未足額認購") }}</span></a></p>
+        
+         <p><a class="btn btn-link" href="/newspageview/test8_news/" role="button"><span style="white-space: nowrap;">{{_("「哥哥迷」炮製地產新潮文 大玩「風繼續吹」歌詞勁生鬼") }}</span></a></p>
+    </div>
+</div>
+
+{% endblock %}

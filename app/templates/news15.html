@@ -1,0 +1,74 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>{{param1}}</h1>
+    
+<button class="like-button">Like</button>
+<span id="like-count">0</span>
+<script>
+    const likeButton = document.querySelector('#like-button');
+    const likeCount = document.querySelector('#like-count');
+  let count = 0;
+
+  likeButton.addEventListener('click', () => {
+    count++;
+    likeCount.textContent = count.toString();
+  });
+</script>
+
+    <p></p>
+    
+    <span class="timestamp"></span>
+        <script>
+
+  const timestamp = document.querySelector('.timestamp');
+
+  function updateTime() {
+    
+    const now = new Date();
+
+    
+    const timeString = now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+   
+    timestamp.textContent = timeString;
+  }
+
+ updateTime();
+  setInterval(updateTime, 1000);
+  
+  
+</script>
+
+</script>
+
+</p> <img src="{{ url_for('static', filename='img/xingu.jpg') }}" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 1000px; height: 300px;">
+<h1><a>【新股IPO】綠竹生物2480怡俊集團2442首日孖展　均未足額認購【新股IPO】綠竹生物2480怡俊集團2442首日孖展　均未足額認購。</a></h1>
+
+<p>內地慢性病疫苗研發商綠竹生物 （新上市編號：02480） 及香港防工程承包商怡俊集團 （新上市編號：02442） 於周二至周五（25日至28日）招股。綜合券商數據指，綠竹生物及怡俊集團首日孖展均未錄得足額認購。
+
+
+
+截至周二（25日）下午6時半，綠竹生物孖展暫錄2263萬元，以公開集資額4327萬元計算，未足額認購。其中，富途借出1500萬元，華盛借出600萬元。
+
+至於怡俊集團，孖展暫錄810萬元，以公開集資額1408萬元計算，未足額認購。其中，輝立借出600萬元。</p>
+
+
+
+{% endblock %}

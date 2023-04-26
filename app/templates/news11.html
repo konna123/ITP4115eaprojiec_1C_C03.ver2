@@ -1,0 +1,87 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>{{param1}}</h1>
+    
+<button class="like-button">Like</button>
+<span id="like-count">0</span>
+<script>
+    const likeButton = document.querySelector('#like-button');
+    const likeCount = document.querySelector('#like-count');
+  let count = 0;
+
+  likeButton.addEventListener('click', () => {
+    count++;
+    likeCount.textContent = count.toString();
+  });
+</script>
+
+    <p></p>
+    
+    <span class="timestamp"></span>
+        <script>
+
+  const timestamp = document.querySelector('.timestamp');
+
+  function updateTime() {
+    
+    const now = new Date();
+
+    
+    const timeString = now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+   
+    timestamp.textContent = timeString;
+  }
+
+ updateTime();
+  setInterval(updateTime, 1000);
+  
+  
+</script>
+
+</p> <img src="{{ url_for('static', filename='img/0421_1_1024.jpg') }}" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 1000px; height: 300px;">
+        <p></p>
+        <p>據稱有百年歷史的阿公岩村面臨重建，房屋署計劃將阿公岩村2.4公頃的用地，重建1500伙公營房屋
+        ，將是茶果嶺村等之後，近年再有市區寮屋村重建，預計第1期將在2032年入伙。<p>
+        <p>據規劃署聯同房屋署等文件顯示，當局物色具潛力改作住宅用途的土地，包括位於阿公岩村的一幅2.41公頃土地，現時為「休憩用地」、「綠化地帶」、「其他指定(商貿)」等多種用途，建議整合劃一為「住宅(甲類)６」用途，
+        總樓面上限92.4萬平方呎，將會提供約1500伙，以及幼稚園、社福及零售設施等設施</p>
+        
+                              <p>▼點擊圖片放大</p>
+      <a href="{{ url_for('static', filename='img/4_1024.jpg') }}" class="img-link" id="img-link">
+            <img src="{{ url_for('static', filename='img/4_1024.jpg') }}" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 400px; height: 300px;">
+        </a>
+        
+        <a>按照當局時間表，重建計劃第一期將2032年入伙，亦即是接近10年後，而第二期更要去到2037年才入伙。
+
+據指，阿公岩村屬於本港舊村落之一，在開埠初期已經有200人聚居，擁有過百年歷史，區內過往曾經有石礦場、船廠，後來有不少工廈變作印刷業，亦有外來人士搬入加建寮屋。據當局亦指，政府擬引用《收回土地條例》收回土地作公營房屋發展及相關設施工程，正就阿公岩村作公營房屋的土地平整及基建進行勘測及詳細設計。
+
+政府近年加快清拆市區寮屋村，之前便曾提出清拆茶果嶺村、牛池灣村及黃大仙竹園聯合村，均會用作興建大型的公營房屋項目。
+
+責任編輯：余敏欽
+
+ 
+
+==========
+
+同場加映：啟德天瀧擁無遮擋維港海景 臨海生活多姿多彩</a>
+    </div>
+</div>
+{% endblock %}
+

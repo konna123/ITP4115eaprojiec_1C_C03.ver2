@@ -1,0 +1,113 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+       <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+      
+    </ol>
+    <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+            <a href="https://inews.hket.com/article/3513182/%E3%80%90%E9%8A%80%E8%A1%8C%E5%8D%B1%E6%A9%9F%E3%80%91FRC%E7%9B%A4%E5%89%8D%E7%80%8925-%E3%80%80%E5%85%A9%E5%A4%A7%E5%95%8F%E9%A1%8C%E6%9C%AA%E8%A7%A3%E3%80%80%E9%AB%98%E7%AE%A1%E9%9B%BB%E8%A9%B1%E6%9C%83%E8%AD%B015%E5%88%86%E9%90%98%E6%94%B6%E7%B7%9A?mtc=80010" >
+            <<img data-link="" alt="【銀行危機】FRC兩大問題未解　高管電話會議15分鐘收線" data-alt="【銀行危機】FRC兩大問題未解　高管電話會議15分鐘收線" src="https://static04.hket.com/res/v3/image/content/3510000/3513182/XxjpbeE007127_20230404_PEPFN0A001_1024.JPG"
+            data-src="https://static04.hket.com/res/v3/image/content/3510000/3513182/XxjpbeE007127_20230404_PEPFN0A001_1024.JPG" class=" lazyloaded"
+          
+            sizes="50vw" alt="" title="" class="sc-1n40ifc-0 kVPLOf" style="display: block; margin: 0 auto;"></a>
+            <div class="wrapper">
+              <a href="https://inews.hket.com/article/3513182/%E3%80%90%E9%8A%80%E8%A1%8C%E5%8D%B1%E6%A9%9F%E3%80%91FRC%E7%9B%A4%E5%89%8D%E7%80%8925-%E3%80%80%E5%85%A9%E5%A4%A7%E5%95%8F%E9%A1%8C%E6%9C%AA%E8%A7%A3%E3%80%80%E9%AB%98%E7%AE%A1%E9%9B%BB%E8%A9%B1%E6%9C%83%E8%AD%B015%E5%88%86%E9%90%98%E6%94%B6%E7%B7%9A?mtc=80010">
+                <h1 style="text-align: center;">【銀行危機】FRC盤前瀉25%　兩大問題未解　高管電話會議15分鐘收線</a>
+            </div>
+        </div>
+
+        <div class="item">
+          <a href="/newspageview/test4_news/">
+            <img class=" lazyloaded" data-src="https://static04.hket.com/res/v3/image/content/3510000/3512960/0i_1024.jpg" src="https://static04.hket.com/res/v3/image/content/3510000/3512960/0i_1024.jpg"
+            sizes="50vw" alt="" title="" class="sc-1n40ifc-0 kVPLOf" style="display: block; margin: 0 auto;"></a>
+            <div class="wrapper">
+            <a href=""><h1 style="text-align: center;">
+                {{_("【名人家居】單身貴族張可頤家中開十人派對 元朗獨立屋擁私人花園BBQ.")}}</a>
+            </div>
+            
+        </div>
+
+   
+
+    <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+  
+
+</div>
+
+      <div class="row" >
+        <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h2 class="featurette-heading">{{_("筲箕灣規劃 ")}}<span class="text-muted">{{_(" 百年阿公岩村擬清拆重建 房屋署擬建成1500伙公營房屋")}}</span></h2>
+            <ul>
+          <li class="lead tight">{{_("據稱有百年歷史的阿公岩村面臨重建，房屋署計劃將阿公岩村2.4公頃的用地，重建1500伙公營房屋，將是茶果嶺村等之後，近年再有市區寮屋村重建，預計第1期將在2032年入伙。")}}</li>
+            <center>
+            <p><a class="btn btn-primary btn-lg" href="/newspageview/test3_news/"
+                 role="button">{{_("詳情")}} <i class="fa fa-star"></i></a></p>
+            </center>
+                </ul>
+        
+         
+        </div>
+        <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1">
+         <img src="static/img/0421_1_1024.jpg" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 400px; height: 300px;">
+        </div>
+      </div>
+
+      
+</div>
+
+      <div class="row" >
+        <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h2 class="featurette-heading">{{_("【騰訊700】 ")}}<span class="text-muted">{{_(" 騰訊據報加快海外投資遊戲資產的步伐　以減低對中國地區的倚賴")}}</span></h2>
+            <ul>
+          <li class="lead tight">{{_("據稱有百年歷史的阿公岩村面臨重建，房屋署計劃將阿公岩村2.4公頃的用地，重建1500伙公營房屋，將是茶果嶺村等之後，近年再有市區寮屋村重建，預計第1期將在2032年入伙。")}}</li>
+            <center>
+            <p><a class="btn btn-primary btn-lg" href="/newspageview/test9_news/"
+                 role="button">{{_("詳情")}} <i class="fa fa-star"></i></a></p>
+            </center>
+                </ul>
+        
+         
+        </div>
+        <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1">
+         <img src="static/img/qie.jpg" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 400px; height: 300px;">
+        </div>
+      </div>
+
+      <div class="row featurette" style="background:url('static/img/old_moon.png')">
+        <div class="col-md-7 col-md-offset-1 col-xs-offset-1">
+          <h2 class="featurette-heading">{{_("Form Generation ")}}<span class="text-muted">{{_(" With full control")}}</span></h2>
+        <ul>
+            <li class="lead tight">{{_("Automatic, Add, Edit and Show from Database Models.")}}</li>
+            <li class="lead tight">{{_("Labels and descriptions for each field.")}}</li>
+            <li class="lead tight">{{_("Automatic base validators from model's definition.")}}</li>
+            <li class="lead tight">{{_("Custom validators, extra fields, custom filters for related dropdown lists.")}}</li>
+            <li class="lead tight">{{_("Image and File support for upload and database field association")}}</li>
+            <li class="lead tight">{{_("Field sets for Form's (Django style).")}}</li>
+        </ul>
+        </div>
+        <div class="col-md-3 col-xs-3 col-md-offset-1 col-xs-offset-1">
+          <h1><i class="fa fa-list-alt fa-5x"></i></h1>
+        </div>
+      </div>
+
+
+
+{% endblock %}

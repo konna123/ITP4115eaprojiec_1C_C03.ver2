@@ -1,0 +1,33 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+       <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+       <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3" ></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="jumbotron" style="background: url('static/img/touban.png');background-size: 120% 110%;background-repeat: no-repeat;">
+            <div class="container">
+            <h1>
+              <i img src="static/img/touban.png" alt="image description" class="img-responsive"></i>
+              <span style="color: transparent;">{{_(".")}}</span>
+                </h1>
+            <p style="opacity: 0;">{{_(".")}}</p>
+            <p style="opacity: 0;">{{_(".")}}</p>
+            <p style="opacity: 0;">{{_(".")}}</p>
+      
+            </div>
+           </div>
+        </div>

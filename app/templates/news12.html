@@ -1,0 +1,75 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>{{param1}}</h1>
+    
+<button class="like-button">Like</button>
+<span id="like-count">0</span>
+<script>
+    const likeButton = document.querySelector('#like-button');
+    const likeCount = document.querySelector('#like-count');
+  let count = 0;
+
+  likeButton.addEventListener('click', () => {
+    count++;
+    likeCount.textContent = count.toString();
+  });
+</script>
+
+    <p></p>
+    
+    <span class="timestamp"></span>
+        <script>
+
+  const timestamp = document.querySelector('.timestamp');
+
+  function updateTime() {
+    
+    const now = new Date();
+
+    
+    const timeString = now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+   
+    timestamp.textContent = timeString;
+  }
+
+ updateTime();
+  setInterval(updateTime, 1000);
+  
+  
+</script>
+
+</p> <img src="{{ url_for('static', filename='img/0i_1024.jpg') }}" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 1000px; height: 300px;">
+        <p></p>
+        <p>港姐張可頤現已淡出幕前，上一次為人所知是參演ViuTV原創劇《暖男爸爸》中的保險員芷明。她雖然已經年屆五十，
+        但仍保養得宜，是娛樂圈中公認的美魔女之一，更有傳聞指出她曾2度拒絕嫁億萬富豪，甚至親戚繼承1億遺產，然而她從未正面承認。<p>
+                                      <p>▼點擊圖片放大</p>
+      <a href="{{ url_for('static', filename='img/monv.jpg') }}" class="img-link" id="img-link">
+            <img src="{{ url_for('static', filename='img/monv.jpg') }}" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 400px; height: 300px;">
+        </a>
+        
+    <a>其實張可頤在中產家庭長大，自小成績優異，13歲遠赴英國寄宿學校讀書，獲曼徹斯特大學取錄。在20歲的時候放暑假回港期間，在街上被徐克發掘為演員，後來更參選港姐落選入行。入行多年，她早已成為富婆，現今在內地開設經理人公司成為CEO，居住於元朗的獨立屋，樂於享受人生。
+
+於上年2022年聖誕節於與家人聚餐享天倫，並在社交網分享家中照片，意外曝光家居環境。獨立屋設計簡約，空間感十足，飯廳擺放了足以招呼10人的白色大餐桌，天花板設有玻璃吊燈。另外，飯廳放置一個大型儲物玻璃櫃，放滿不少BEARBRICK公仔，看見她是潮牌BEARBRICK粉絲，當中部分公仔價值過千元。</a>
+        
+            
+            
+            
+{% endblock %}

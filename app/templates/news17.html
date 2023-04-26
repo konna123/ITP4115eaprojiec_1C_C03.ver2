@@ -1,0 +1,69 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>{{param1}}</h1>
+    
+<button class="like-button">Like</button>
+<span id="like-count">0</span>
+<script>
+    const likeButton = document.querySelector('#like-button');
+    const likeCount = document.querySelector('#like-count');
+  let count = 0;
+
+  likeButton.addEventListener('click', () => {
+    count++;
+    likeCount.textContent = count.toString();
+  });
+</script>
+
+    <p></p>
+    
+    <span class="timestamp"></span>
+        <script>
+
+  const timestamp = document.querySelector('.timestamp');
+
+  function updateTime() {
+    
+    const now = new Date();
+
+    
+    const timeString = now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+   
+    timestamp.textContent = timeString;
+  }
+
+ updateTime();
+  setInterval(updateTime, 1000);
+  
+  
+</script>
+
+</script>
+
+</p> <img src="{{ url_for('static', filename='img/qie.jpg') }}" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 1000px; height: 300px;">
+<h1><a>【騰訊700】騰訊據報加快海外投資遊戲資產的步伐　以減低對中國地區的倚賴。</a></h1>
+
+<p>外電報道，面對中央收緊對遊戲發行的限制，騰訊 （00700） 加快海外投資遊戲資產的步伐，以減低對中國地區的倚賴，分散收入來源。
+消息人士指，騰訊去年減持新投資步伐，未來將會透過投資或收購遊戲工作室，加快拓展海外市場，當中歐洲的遊戲工作室會是首選。</p>
+
+
+
+{% endblock %}

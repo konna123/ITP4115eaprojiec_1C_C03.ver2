@@ -1,0 +1,69 @@
+<!-- extend base layout -->
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>{{param1}}</h1>
+    
+<button class="like-button">Like</button>
+<span id="like-count">0</span>
+<script>
+    const likeButton = document.querySelector('#like-button');
+    const likeCount = document.querySelector('#like-count');
+  let count = 0;
+
+  likeButton.addEventListener('click', () => {
+    count++;
+    likeCount.textContent = count.toString();
+  });
+</script>
+
+    <p></p>
+    
+    <span class="timestamp"></span>
+        <script>
+
+  const timestamp = document.querySelector('.timestamp');
+
+  function updateTime() {
+    
+    const now = new Date();
+
+    
+    const timeString = now.toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+   
+    timestamp.textContent = timeString;
+  }
+
+ updateTime();
+  setInterval(updateTime, 1000);
+  
+  
+</script>
+
+</script>
+
+</p> <img src="{{ url_for('static', filename='img/gege.jpg') }}" alt="image description" class="img-responsive" style="position: relative; left:--px; width: 1000px; height: 300px;">
+<h1><a>「哥哥迷」炮製地產新潮文 大玩「風繼續吹」歌詞勁生鬼。</a></h1>
+
+<p>地產代理為推銷樓盤，不時創作出極為吸引眼球的樓盤廣告，部份大玩諧音、「食字」，甚至大改歌詞，目的要制造出引人入勝的效果，亦令到近年市場出現了一篇又一篇由網民俗稱的「地產潮文或文學」。而繼之前有代理將「綠帽唔怕帶」，改為「綠表唔怕帶」，用來宣傳大圍一個居屋單位後，近日就有代理張貼一則西半山寶翠園的樓盤廣告，創作者把已故歌手「哥哥」張國榮經典名曲「風繼續吹」中的一句歌詞，
+由「風繼續吹，不忍遠離」，改成「瘋價續推，急緊願離」，似乎想表達業主賣樓心切，願低價沽貨離場。。</p>
+
+
+
+{% endblock %}
